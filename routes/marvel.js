@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const isAuthentificated = require("../middlewares/isAuthentificated");
+// const isAuthentificated = require("../middlewares/isAuthentificated");
 
 router.get("/characters", async (req, res) => {
   try {
@@ -47,7 +47,7 @@ router.get("/comics/:characterId", async (req, res) => {
   }
 });
 
-router.post("/favorites", isAuthentificated, async (req, res) => {
+router.post("/favorites", async (req, res) => {
   const fav = req.fields.fav;
 
   let favTab = [[], []];
